@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVID | Portfolio - Projects</title>
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/particlesjs@2.2.3/dist/particles.min.js
+    "></script>
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/assets/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/static/assets/favicon_io/site.webmanifest" />
+    
+   
+    <style>
+
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: 'Russo One', sans-serif;
+  margin: 0;
+    padding: 0;
+    justify-content: center;
+    cursor: none;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+
+
+
+}
+
+header {
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
+  
+}
+
+.back-button {
+
+
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+
+}
+
+header a:hover {
+  color: #ccc;
+}
+
+
+
+
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-box {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.project-box h2 {
+  margin-bottom: 10px;
+}
+
+.github-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.github-button ion-icon {
+  font-size: 24px;
+}
+
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the canvas behind all other elements */
+
+  
+}
+
+
+.hover-this {
+  transition: all 0.3s ease;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: 0.3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
+  z-index: 9999;
+}
+
+
+
+
+.hover-this:hover ~ .cursor {
+  transform:translate(-50%, -50%) scale(8);
+}
+
+span {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  transition: transform 0.1s linear;
+}
+
+#project1 {
+  background-image: url('static/assets/img/project1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+#project2 {
+  background-image: url('static/assets/img/project2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+#project3 {
+  background-image: url('static/assets/img/project3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  
+}
+
+.project-box {
+  color: #222;
+  transition: background-color 0.2s ease-in-out,
+              box-shadow 0.3s ease-in-out,
+              transform 0.4s ease-in-out;
+}
+
+.project-box:hover {
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+.project-box p {
+  opacity: 0;
+}
+
+.project-box h2 {
+  opacity: 0;
+}
+
+.project-box a span{
+  scale: 2;
+}
+
+.project-box a {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+
+.cta {
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out,
+              box-shadow 0.3s ease-in-out,
+              transform 0.4s ease-in-out;
+}
+
+.cta:hover {
+  /* Choose your preferred hover effect(s) from the options above */
+  background-color: #444; /* Subtle color change */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add depth */
+  transform: scale(1.05); /* Subtle animation */
+}
+
+    </style>
+
+    <script>
+
+const lightbox = document.querySelector('.lightbox');
+const openLightboxButtons = document.querySelectorAll('.open-lightbox');
+const closeLightboxButton = document.querySelector('.close-lightbox');
+
+openLightboxButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+  });
+});
+
+// Close lightbox on click
+closeLightboxButton.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+// Optionally add click events outside the lightbox to close it
+document.addEventListener('click', (event) => {
+  if (event.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
+
+    </script>
+</head>
+<body>
+  <div class="cursor"></div>
+
+    <header>
+        <a href="/" class="back-button cta"><span >Back to Home</span></a>
+    </header>
+
+    <main>
+        <h1 class="hover-this"><span>Projects</span></h1>
+
+        <section class="projects-grid">
+            <div class="project-box" id="project1">
+                <h2>Jobster API</h2>
+                <p>Brief description of project 1</p>
+                <a href="https://jobster-api-hdza.onrender.com" target="_blank" class="cta">
+                  <span><iconify-icon icon="icon-park:preview-open"></iconify-icon></span>
+                </a>
+            </div>
+            <div class="project-box" id="project2">
+              <h2>Ecommerce API</h2>
+              <p>Brief description of project 1</p>
+              <a href="https://onecomapi.onrender.com" target="_blank" class="cta">
+                <span><iconify-icon icon="icon-park:preview-open"></iconify-icon></span>
+              </a>
+          </div>
+          <div class="project-box" id="project3">
+            <h2>Sudoku Solver</h2>
+            <p>Brief description of project 1</p>
+            <a href="https://boilerplate-project-sudoku-solver.davidowolagba.repl.co/" target="_blank" class="cta">
+              <span><iconify-icon icon="icon-park:preview-open"></iconify-icon></span>
+            </a>
+        </div>
+            </section>
+
+        <a href="https://github.com/owolagbadavid" target="_blank" class="github-button cta">
+           <span> <ion-icon name="logo-github"></ion-icon></span>
+        </a>
+
+        <footer>
+          <p class="hover-this"><span style="font-size: medium;">&copy; Oreosinit 2023</span></p>
+      </footer>
+
+    </main>
+    <canvas class="background" ></canvas>
+
+
+
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+<script>
+  window.onload = function () {
+      Particles.
+        init
+        ({
+
+          // normal options
+          selector:
+            '.background'
+          ,
+          color: ['#00008B', '#ffffff', '#e0ffff', '#c0c0c0', '#000039']
+          ,
+          connectParticles: true,
+          maxParticles: 200,
+          responsive: [
+            {
+              breakpoint: 1024,
+              options: {
+
+                maxParticles: 130,
+              }
+            },
+            {
+              breakpoint: 800,
+              options: {
+
+                connectParticles: false,
+              }
+            }
+            
+          ]
+          
+
+
+        });
+    };
+
+
+
+(function () {
+
+const link = document.querySelectorAll('.hover-this');
+const cursor = document.querySelector('.cursor');
+
+const animateit = function (e) {
+      const span = this.querySelector('span');
+      const { offsetX: x, offsetY: y } = e,
+      { offsetWidth: width, offsetHeight: height } = this,
+
+      move = 25,
+      xMove = x / width * (move * 2) - move,
+      yMove = y / height * (move * 2) - move;
+
+      span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+      if (e.type === 'mouseleave') span.style.transform = '';
+};
+
+const editCursor = e => {
+      const { clientX: x, clientY: y } = e;
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+};
+
+link.forEach(b => b.addEventListener('mousemove', animateit));
+link.forEach(b => b.addEventListener('mouseleave', animateit));
+
+link.forEach(b => b.addEventListener('mouseover', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(8)';
+  }));
+
+  // Optional: Add event listener for mouseleave to reset the cursor
+  link.forEach(b => b.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%)'; // Or whatever default transform you want
+  }));
+window.addEventListener('mousemove', editCursor);
+
+})();
+
+
+</script>

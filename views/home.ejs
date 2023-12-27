@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVID | Portfolio - Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/particlesjs@2.2.3/dist/particles.min.js
+    "></script>
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/assets/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/static/assets/favicon_io/site.webmanifest" />
+    
+    <script>
+      window.onload = function () {
+          Particles.
+            init
+            ({
+
+              // normal options
+              selector:
+                '.background'
+              ,
+              color: ['#00008B', '#ffffff', '#e0ffff', '#c0c0c0', '#000039']
+              ,
+              connectParticles: true,
+              maxParticles: 200,
+              responsive: [
+                {
+                  breakpoint: 1024,
+                  options: {
+
+                    maxParticles: 130,
+                  }
+                },
+                {
+                  breakpoint: 800,
+                  options: {
+
+                    connectParticles: false,
+                  }
+                }
+                
+              ]
+              
+
+
+            });
+        };
+    </script>
+    <style>
+
+body {
+  font-family: 'Russo One', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  cursor: none;
+
+
+}
+
+main {
+  /* box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02); */
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: auto;
+  padding: 50px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.cta {
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out,
+              box-shadow 0.3s ease-in-out,
+              transform 0.4s ease-in-out;
+}
+
+.cta:hover {
+  /* Choose your preferred hover effect(s) from the options above */
+  background-color: #444; /* Subtle color change */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add depth */
+  transform: scale(1.05); /* Subtle animation */
+}
+
+.skills {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center; /* Centers the entire skill set horizontally */
+  gap: 10px; /* Adjust spacing between skills */
+}
+
+.skill  {
+  padding: 5px 10px; /* Adds padding for breathing space */
+  background-color: #333; /* Optional */
+  border-radius: 5px; /* Optional */
+  text-align: center; /* Centers text within each skill */
+}
+
+.contact-link {
+  padding: 5px 10px; /* Adds padding for breathing space */
+  background-color: #333; /* Optional */
+  border-radius: 5px; /* Optional */
+  text-align: center; /* Centers text within each skill */
+}
+
+
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  padding: 50px;
+
+    
+}
+
+.dropdown-menu , .dropdown-menu2{
+  display: none; /* Hide the menu initially */
+  position: relative; /* Use relative positioning */
+  bottom: 100%; /* Position below the button with a 100% gap */
+  left: 50%;
+  transform: translateX(-50%); /* Center the menu horizontally */
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+
+}
+
+.dropdown-menu.show , .dropdown-menu2.show{
+  display: flex; /* Show the menu when the `.show` class is added */
+  opacity: 1;
+}
+
+.dropdown-menu a , .dropdown-menu2 a{
+  display: inline-block; /* Keep links on one line */
+  margin: 0 5px; /* Add spacing between icons */
+}
+
+
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the canvas behind all other elements */
+
+  
+}
+
+
+
+
+.hover-this {
+  transition: all 0.3s ease;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: 0.3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
+  z-index: 9999;
+}
+
+
+
+
+.hover-this:hover ~ .cursor {
+  transform:translate(-50%, -50%) scale(8);
+}
+
+span {
+  display: inline-block;
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 36px;
+  text-transform: uppercase;
+  transition: transform 0.1s linear;
+}
+
+@media screen and (max-width: 768px) {
+  span {
+    font-size: 15px;
+    font-weight: 250;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 10px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    
+}
+
+.dropdown-menu {
+  display: none; /* Hide the menu initially */
+  position: relative; /* Use relative positioning */
+  bottom: 100%; /* Position below the button with a 100% gap */
+  left: 50%;
+  transform: translateX(-50%); /* Center the menu horizontally */
+  background-color: #222;
+  padding: 7px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+
+}
+
+
+.dropdown-menu a {
+  display: inline-block; /* Keep links on one line */
+  margin: 0 3px; /* Add spacing between icons */
+}
+
+main {
+  /* box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02); */
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: auto;
+  padding: 30px;
+}
+
+.intro {
+  margin-bottom: 15px ;
+}
+.skills {
+  margin-top: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center; /* Centers the entire skill set horizontally */
+  gap: 7px; /* Adjust spacing between skills */
+}
+
+.skill  {
+  padding: 3px 8px; /* Adds padding for breathing space */
+  background-color: #333; /* Optional */
+  border-radius: 5px; /* Optional */
+  text-align: center; /* Centers text within each skill */
+}
+
+h1 {
+  margin-bottom: 2px;
+}
+p {
+  line-height: 1;
+  margin-top: auto;
+}
+  
+}
+
+@media screen and (max-width: 400px) {
+  span {
+    font-size: 10px;
+    font-weight: 100;
+  }
+}
+
+
+
+
+    </style>
+</head>
+<body >
+  <div class="cursor"></div>
+
+    <main>
+        <section class="intro">
+            <h1 class="hover-this"><span >David Owolagba</span></h1>
+            <p class="hover-this"><span >Software Engineer</span></p>
+            <div class="cta-wrapper">
+            <a href="#" class="cta">Contact Me</a>
+            
+          </div>
+          <div class="dropdown-menu">
+            <a href="https://github.com/owolagbadavid" target="_blank" class="contact-link cta" ><span><iconify-icon icon="devicon:github"></iconify-icon></span></a>
+            <a href="https://www.linkedin.com/in/owolagbadavid/" target="_blank" class="contact-link cta"><span><iconify-icon icon="devicon:linkedin"></iconify-icon></span></a>
+            <a href="https://twitter.com/oreosinnit" target="_blank" class="contact-link cta"><span><iconify-icon icon="devicon:twitter"></iconify-icon></span></a>
+          </div>
+        </section>
+        <section class="skills">
+          <div class="skill hover-this"><span><iconify-icon icon="devicon-plain:nodejs-wordmark"></iconify-icon></span></div>
+          <div class="skill hover-this"><span><iconify-icon icon="cib:typescript"></iconify-icon></span></div>
+          <div class="skill hover-this"><span><iconify-icon icon="skill-icons:bash-dark"></iconify-icon></span></div>
+          <div class="skill hover-this"><span><iconify-icon icon="devicon-plain:docker-wordmark"></iconify-icon></span></div>
+          <div class="skill hover-this"><span><iconify-icon icon="devicon-plain:postgresql-wordmark"></iconify-icon></span></div>
+  <div class="skill hover-this"><span><iconify-icon icon="devicon-plain:mongodb-wordmark"></iconify-icon></span></div>
+        </section>
+        <section class="cta-wrapper">
+            <a href="#" class="cta cta2">Explore My Work</a>
+        </section>
+        <div class="dropdown-menu2">
+          <a href="https://resume.io/r/hCF6clbUL" target="_blank" class="contact-link cta"><span><iconify-icon icon="academicons:cv"></iconify-icon></span></a>
+          <a href="/projects" class="contact-link cta" ><span><iconify-icon icon="pajamas:work"></iconify-icon></span></a>
+
+        </div>
+
+        <footer>
+          <p class="hover-this"><span style="font-size: medium;">&copy; Oreosinit 2023</span></p>
+      </footer>
+        
+    </main>
+
+    <canvas class="background" ></canvas>
+
+
+
+<script>
+  const ctaButton = document.querySelector('.cta');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+ctaButton.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('show');
+});
+
+const ctaButton2 = document.querySelector('.cta2');
+const dropdownMenu2 = document.querySelector('.dropdown-menu2');
+
+ctaButton2.addEventListener('click', () => {
+  dropdownMenu2.classList.toggle('show');
+});
+
+
+(function () {
+
+const link = document.querySelectorAll('.hover-this');
+const cursor = document.querySelector('.cursor');
+
+const animateit = function (e) {
+      const span = this.querySelector('span');
+      const { offsetX: x, offsetY: y } = e,
+      { offsetWidth: width, offsetHeight: height } = this,
+
+      move = 25,
+      xMove = x / width * (move * 2) - move,
+      yMove = y / height * (move * 2) - move;
+
+      span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+      if (e.type === 'mouseleave') span.style.transform = '';
+};
+
+const editCursor = e => {
+      const { clientX: x, clientY: y } = e;
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+};
+
+link.forEach(b => b.addEventListener('mousemove', animateit));
+link.forEach(b => b.addEventListener('mouseleave', animateit));
+
+link.forEach(b => b.addEventListener('mouseover', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(8)';
+  }));
+
+  // Optional: Add event listener for mouseleave to reset the cursor
+  link.forEach(b => b.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%)'; // Or whatever default transform you want
+  }));
+window.addEventListener('mousemove', editCursor);
+
+})();
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -10,6 +10,7 @@ const canonicalDomain2 = process.env.CAN2;
 
 app.use((req, res, next) => {
   // Check if the host matches the canonical domain
+  console.log(req.headers.host, canonicalDomain1, canonicalDomain2)
   if (req.headers.host !== canonicalDomain1 || req.headers.host !== canonicalDomain2) {
     // Redirect to the canonical domain using a permanent redirect (301)
     res.redirect(301, `https://${canonicalDomain1}${req.url}`);
